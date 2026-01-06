@@ -1,7 +1,7 @@
 // Dashboard V2 Logic
 
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Load User Data
+    // 1. Load User Data 
     const name = localStorage.getItem('studentName') || 'Student';
     const branch = localStorage.getItem('studentBranch') || 'CS';
     const year = localStorage.getItem('studentYear') || '3';
