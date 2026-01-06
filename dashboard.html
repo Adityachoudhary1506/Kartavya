@@ -1,1 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Command Center | Pathlynx</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dash-v2-body">
+
+    <!-- Sidebar V2 -->
+    <aside class="sidebar-v2" id="sidebar">
+        <div class="sidebar-brand">
+            <span class="material-icons-round">terminal</span>
+            <span>Path<span class="highlight">lynx</span></span>
+        </div>
+
+        <div class="sidebar-scroll">
+            <div class="nav-group-title">Main Menu</div>
+            <a href="#" class="nav-item-v2 active" data-target="section-home">
+                <span class="material-icons-round">dashboard</span>
+                Dashboard
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-profile">
+                <span class="material-icons-round">person</span>
+                My Profile
+                <span class="badge">95%</span>
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-internships">
+                <span class="material-icons-round">work_outline</span>
+                Internships
+                <span class="badge">new</span>
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-placements">
+                <span class="material-icons-round">event_note</span>
+                Placements
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-tracker">
+                <span class="material-icons-round">track_changes</span>
+                Application Tracker
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-goals">
+                <span class="material-icons-round">check_circle_outline</span>
+                My Goals & To-Do
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-resume">
+                <span class="material-icons-round">description</span>
+                Resume Templates
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-ai">
+                <span class="material-icons-round">auto_awesome</span>
+                AI Insights
+            </a>
+
+            <div class="nav-group-title">System</div>
+            <a href="#" class="nav-item-v2" data-target="section-notifications">
+                <span class="material-icons-round">notifications</span>
+                Notifications
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-help">
+                <span class="material-icons-round">help_outline</span>
+                Help & Support
+            </a>
+            <a href="#" class="nav-item-v2" data-target="section-settings">
+                <span class="material-icons-round">settings</span>
+                Settings
+            </a>
+        </div>
+
+        <div class="sidebar-footer">
+            <button class="menu-item logout" onclick="logout()"
+                style="width: 100%; border:none; background:none; cursor:pointer;">
+                <span class="material-icons-round">logout</span>
+                Logout
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content V2 -->
+    <div class="main-content-v2">
+
+        <!-- Top Bar -->
+        <header class="topbar-v2">
+            <div style="display: flex; align-items: center;">
+                <button class="toggle-menu" onclick="toggleSidebar()">
+                    <span class="material-icons-round">menu</span>
+                </button>
+                <div class="search-v2">
+                    <span class="material-icons-round">search</span>
+                    <input type="text" placeholder="Search internships, companies, roles...">
+                </div>
+            </div>
+
+            <div class="topbar-actions">
+                <button class="icon-btn-v2">
+                    <span class="material-icons-round">notifications</span>
+                    <span class="dot"></span>
+                </button>
+                <div class="profile-dropdown-btn">
+                    <div class="user-avatar" style="background-image: url('assets/students.png');"></div>
+                    <div class="profile-info-text">
+                        <span class="name-text user-name-display">Student</span>
+                        <span class="role-text" id="header-role-text">3rd Year • CS</span>
+                    </div>
+                    <span class="material-icons-round">expand_more</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Content Scroll Area -->
+        <div class="content-scroll">
+
+            <!-- 1. Dashboard Home -->
+            <section id="section-home" class="dash-section active">
+
+                <!-- Rich Welcome Banner -->
+                <div class="welcome-banner-rich">
+                    <div class="welcome-text">
+                        <h1>Welcome back, <span class="user-name-display">Student</span>!</h1>
+                        <div class="welcome-info">
+                            <span class="material-icons-round" style="font-size:1.1rem">school</span>
+                            <span id="welcome-role-text">3rd Year, Computer Science</span>
+                        </div>
+                        <div class="welcome-quote">"The future depends on what you do today."</div>
+                    </div>
+                    <div class="welcome-visual" style="text-align: right;">
+                        <span class="material-icons-round"
+                            style="font-size: 4rem; opacity: 0.8; color: rgba(255,255,255,0.8);">rocket_launch</span>
+                    </div>
+                </div>
+
+                <!-- 4-Card Stats Row -->
+                <div class="stats-grid-v2">
+                    <!-- Profile Stats -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#e8f0fe; color:var(--primary-color);">
+                                <span class="material-icons-round">person</span>
+                            </div>
+                            <span class="stat-value-rich">85%</span>
+                        </div>
+                        <div class="stat-label-rich">Profile Completion</div>
+                        <div class="progress-container">
+                            <div class="progress-label-row">
+                                <span>Complete</span>
+                                <span>15% left</span>
+                            </div>
+                            <div class="progress-bar-bg">
+                                <div class="progress-bar-fill" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Applied Stats -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#e6f4ea; color:#34a853;">
+                                <span class="material-icons-round">send</span>
+                            </div>
+                            <span class="stat-value-rich">12</span>
+                        </div>
+                        <div class="stat-label-rich">Applications Sent</div>
+                        <div class="stat-label-rich" style="margin-top:0.5rem; font-size:0.75rem; color:#34a853;">
+                            <span class="material-icons-round"
+                                style="font-size:0.8rem; vertical-align:middle;">trending_up</span> +2 this week
+                        </div>
+                    </div>
+
+                    <!-- Eligible Stats -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#fef7e0; color:#f9ab00;">
+                                <span class="material-icons-round">verified</span>
+                            </div>
+                            <span class="stat-value-rich">5</span>
+                        </div>
+                        <div class="stat-label-rich">Eligible Drives</div>
+                        <div class="stat-label-rich" style="margin-top:0.5rem; font-size:0.75rem;">Check Eligibility
+                        </div>
+                    </div>
+
+                    <!-- Deadlines Stats -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#fce8e6; color:#ea4335;">
+                                <span class="material-icons-round">event_busy</span>
+                            </div>
+                            <span class="stat-value-rich">2</span>
+                        </div>
+                        <div class="stat-label-rich">Closing Soon</div>
+                        <div class="stat-label-rich" style="margin-top:0.5rem; font-size:0.75rem; color:#ea4335;">Urgent
+                            Action</div>
+                    </div>
+                </div>
+
+                <!-- Main Content Split -->
+                <div class="dashboard-grid">
+
+                    <!-- Left Column (Opportunities & Timeline) -->
+                    <div class="main-column">
+
+                        <!-- Recommended Opps -->
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h3>Recommended Opportunities</h3>
+                                <a href="#" onclick="switchSection('section-internships')" class="view-all">View All</a>
+                            </div>
+                            <div class="job-list">
+                                <!-- Job 1 -->
+                                <div class="job-card">
+                                    <div class="job-header">
+                                        <div class="company-logo google-logo">G</div>
+                                        <div class="job-role">
+                                            <h4>Software Engineer Intern</h4>
+                                            <p>Google • Remote possible</p>
+                                        </div>
+                                        <span class="match-badge">95% Match</span>
+                                    </div>
+                                    <div class="job-tags">
+                                        <span>₹80k/month</span>
+                                        <span>CS/IT Only</span>
+                                        <span>By 10th Jan</span>
+                                    </div>
+                                    <div class="job-actions">
+                                        <button class="btn-primary-sm">Apply Now</button>
+                                        <button class="btn-icon-sm"><span
+                                                class="material-icons-round">bookmark_border</span></button>
+                                    </div>
+                                </div>
+                                <!-- Job 2 -->
+                                <div class="job-card">
+                                    <div class="job-header">
+                                        <div class="company-logo ms-logo">M</div>
+                                        <div class="job-role">
+                                            <h4>Data Scientist</h4>
+                                            <p>Microsoft • Hyderabad</p>
+                                        </div>
+                                        <span class="match-badge orange">88% Match</span>
+                                    </div>
+                                    <div class="job-tags">
+                                        <span>₹75k/month</span>
+                                        <span>Data Analysis</span>
+                                        <span>By 15th Jan</span>
+                                    </div>
+                                    <div class="job-actions">
+                                        <button class="btn-primary-sm">Apply Now</button>
+                                        <button class="btn-icon-sm"><span
+                                                class="material-icons-round">bookmark_border</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Timeline -->
+                        <div class="section-container">
+                            <div class="section-header">
+                                <h3>Placement Timeline</h3>
+                                <span class="live-indicator"
+                                    style="color:#ea4335; font-size:0.8rem; display:flex; align-items:center; gap:0.2rem;"><span
+                                        style="font-size:1.2rem;">•</span> Live Updates</span>
+                            </div>
+                            <div class="timeline">
+                                <div class="timeline-item done">
+                                    <div class="time-marker"></div>
+                                    <div class="time-content">
+                                        <h5>Resume Verification</h5>
+                                        <p>Completed on Jan 2nd</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item active">
+                                    <div class="time-marker"></div>
+                                    <div class="time-content">
+                                        <h5>Google Technical Round</h5>
+                                        <p>Jan 5th, 10:00 AM • Lab 3</p>
+                                    </div>
+                                </div>
+                                <div class="timeline-item">
+                                    <div class="time-marker"></div>
+                                    <div class="time-content">
+                                        <h5>Microsoft Interview</h5>
+                                        <p>Jan 8th (Tentative)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column (Status & Alerts) -->
+                    <div class="side-column">
+
+                        <!-- Application Status Matrix -->
+                        <div class="section-container">
+                            <h3>Application Status</h3>
+                            <div class="status-matrix">
+                                <div class="status-box applied">
+                                    <h4>6</h4>
+                                    <span>Applied</span>
+                                </div>
+                                <div class="status-box shortlisted">
+                                    <h4>3</h4>
+                                    <span>Shortlisted</span>
+                                </div>
+                                <div class="status-box rejected">
+                                    <h4>2</h4>
+                                    <span>Rejected</span>
+                                </div>
+                                <div class="status-box selected">
+                                    <h4>1</h4>
+                                    <span>Selected</span>
+                                </div>
+                            </div>
+                            <a href="#" onclick="switchSection('section-tracker')" class="btn-text-sm"
+                                style="justify-content:center; display:flex;">View Tracker</a>
+                        </div>
+
+                        <!-- Notifications/Alerts -->
+                        <div class="section-container">
+                            <h3>Notifications</h3>
+                            <div class="notification-list" style="margin-top:1rem;">
+                                <div class="notif-item urgent">
+                                    <span class="material-icons-round" style="color:#ea4335">warning</span>
+                                    <div class="notif-content">
+                                        <h5>Action Required</h5>
+                                        <p>Goldman Sachs application closes in 24h.</p>
+                                    </div>
+                                </div>
+                                <div class="notif-item info">
+                                    <span class="material-icons-round"
+                                        style="color:var(--primary-color)">campaign</span>
+                                    <div class="notif-content">
+                                        <h5>New Drive Announced</h5>
+                                        <p>TCS Digital drive details updated.</p>
+                                    </div>
+                                </div>
+                                <div class="notif-item">
+                                    <span class="material-icons-round" style="color:#94a3b8">info</span>
+                                    <div class="notif-content">
+                                        <h5>Profile View</h5>
+                                        <p>Recruiter viewed your profile.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Teaser -->
+                        <div class="ai-prep-card">
+                            <div class="prep-header">
+                                <span class="material-icons-round">school</span>
+                                <h4>Prep Assistant</h4>
+                            </div>
+                            <p>Focus on <strong>Dynamic Programming</strong> for your upcoming interactions based on
+                                recent trends.</p>
+                            <button class="btn-text-sm" onclick="switchSection('section-ai')">Start Practice <span
+                                    class="material-icons-round">arrow_forward</span></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Profile -->
+            <section id="section-profile" class="dash-section">
+                <h2>My Profile</h2>
+                <div class="form-card" style="margin-top: 1rem;">
+                    <div class="profile-upload-center">
+                        <div class="avatar-preview"
+                            style="background-image: url('assets/students.png'); background-size: cover;"></div>
+                        <span class="upload-label">Change Photo</span>
+                    </div>
+                    <form>
+                        <div class="row-inputs">
+                            <div class="input-group">
+                                <label>Full Name</label>
+                                <input type="text" id="profile-name-input" value="Student" readonly>
+                            </div>
+                            <div class="input-group">
+                                <label>Year</label>
+                                <input type="text" id="profile-year-input" value="3rd Year" readonly>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <label>Email</label>
+                            <input type="email" id="profile-email-input" value="student@example.com" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Course / Branch</label>
+                            <input type="text" id="profile-branch-input" value="Computer Science" readonly>
+                        </div>
+                        <div class="input-group">
+                            <label>Skills</label>
+                            <div class="job-tags">
+                                <span style="background:#e8f0fe; color:#1967d2;">Python</span>
+                                <span style="background:#e8f0fe; color:#1967d2;">JavaScript</span>
+                                <span style="background:#e8f0fe; color:#1967d2;">React</span>
+                            </div>
+                        </div>
+                        <button type="button" class="btn-primary">Edit Profile</button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- 3. Internships -->
+            <section id="section-internships" class="dash-section">
+                <!-- Internships Page Header -->
+                <div class="intern-page-header">
+                    <div>
+                        <h2>Find Internships</h2>
+                        <p class="text-secondary">Explore 500+ curated opportunities.</p>
+                    </div>
+                    <!-- Reuse mockup search style -->
+                    <div class="search-bar-mockup" style="margin:0; width:300px;">
+                        <span class="material-icons-round">search</span>
+                        <input type="text" placeholder="Search by role, company...">
+                    </div>
+                </div>
+
+                <div class="internships-layout">
+                    <!-- 1. Filters Panel -->
+                    <aside class="filters-panel">
+                        <div class="filter-header">
+                            <h3>Filters</h3>
+                            <button class="btn-text-sm" style="font-size:0.8rem;">Clear all</button>
+                        </div>
+
+                        <div class="filter-group"
+                            style="display:flex; justify-content:space-between; align-items:center;">
+                            <h4 style="margin:0;">Quick Apply</h4>
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Status <span class="material-icons-round" style="font-size:1rem">expand_less</span></h4>
+                            <div class="checkbox-list">
+                                <label class="checkbox-item"><input type="checkbox" checked> Live</label>
+                                <label class="checkbox-item"><input type="checkbox"> Expired</label>
+                                <label class="checkbox-item"><input type="checkbox"> Closed</label>
+                                <label class="checkbox-item"><input type="checkbox"> Recent</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Type <span class="material-icons-round" style="font-size:1rem">expand_less</span></h4>
+                            <div class="checkbox-list">
+                                <label class="checkbox-item"><input type="checkbox"> Full-time</label>
+                                <label class="checkbox-item"><input type="checkbox"> Part-time</label>
+                                <label class="checkbox-item"><input type="checkbox"> Remote</label>
+                                <label class="checkbox-item"><input type="checkbox"> Hybrid</label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Location <span class="material-icons-round" style="font-size:1rem">expand_more</span>
+                            </h4>
+                            <!-- Collapsed content would go here, static for now -->
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Duration <span class="material-icons-round" style="font-size:1rem">expand_more</span>
+                            </h4>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Skills <span class="material-icons-round" style="font-size:1rem">expand_more</span></h4>
+                        </div>
+
+                        <div class="filter-group">
+                            <h4>Stipend</h4>
+                            <div class="checkbox-list">
+                                <label class="checkbox-item"><input type="checkbox"> Paid</label>
+                                <label class="checkbox-item"><input type="checkbox"> Unpaid</label>
+                                <label class="checkbox-item"><input type="checkbox"> > 10k/mo</label>
+                            </div>
+                        </div>
+                    </aside>
+
+                    <!-- 2. Listings Container -->
+                    <div class="listings-container">
+
+                        <!-- Card 1 -->
+                        <div class="intern-card-rich">
+                            <div class="ic-header">
+                                <div class="ic-logo google-logo">G</div>
+                                <div class="ic-info">
+                                    <div class="ic-role">Software Engineer Intern</div>
+                                    <div class="ic-company">
+                                        Google <span class="material-icons-round"
+                                            style="font-size:0.9rem; color:#1da1f2;">verified</span>
+                                        <span class="source-badge">Source: Unstop</span>
+                                    </div>
+                                </div>
+                                <button class="btn-icon-sm"><span
+                                        class="material-icons-round">bookmark_border</span></button>
+                            </div>
+
+                            <div class="ic-meta-row">
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">location_on</span> Bangalore</div>
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">schedule</span> 6 Months</div>
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">work</span> In-Office</div>
+                            </div>
+
+                            <div class="ic-tags">
+                                <span class="tag-badge">Domain: Software Eng</span>
+                                <span class="tag-badge">Paid</span>
+                                <span class="tag-badge stipend">₹80,000 / month</span>
+                            </div>
+
+                            <div class="ic-footer">
+                                <div class="deadline-timer">
+                                    <span class="material-icons-round" style="font-size:1rem">timer</span> 5 days left
+                                </div>
+                                <a href="https://unstop.com" target="_blank" class="btn-primary-sm"
+                                    style="padding: 0.5rem 1.5rem; text-decoration:none;">Apply on Unstop <span
+                                        class="material-icons-round"
+                                        style="font-size:1rem; vertical-align:middle;">open_in_new</span></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="intern-card-rich">
+                            <div class="ic-header">
+                                <div class="ic-logo ms-logo">M</div>
+                                <div class="ic-info">
+                                    <div class="ic-role">Data Scientist Intern</div>
+                                    <div class="ic-company">
+                                        Microsoft <span class="material-icons-round"
+                                            style="font-size:0.9rem; color:#1da1f2;">verified</span>
+                                        <span class="source-badge">Source: LinkedIn</span>
+                                    </div>
+                                </div>
+                                <button class="btn-icon-sm"><span
+                                        class="material-icons-round">bookmark_border</span></button>
+                            </div>
+
+                            <div class="ic-meta-row">
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">location_on</span> Hyderabad</div>
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">schedule</span> 12 Weeks</div>
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">wifi</span> Remote</div>
+                            </div>
+
+                            <div class="ic-tags">
+                                <span class="tag-badge">Domain: Data Science</span>
+                                <span class="tag-badge">Paid</span>
+                                <span class="tag-badge stipend">₹90,000 / month</span>
+                            </div>
+
+                            <div class="ic-footer">
+                                <div class="deadline-timer">
+                                    <span class="material-icons-round" style="font-size:1rem">timer</span> 2 days left
+                                </div>
+                                <a href="https://linkedin.com" target="_blank" class="btn-primary-sm"
+                                    style="padding: 0.5rem 1.5rem; text-decoration:none;">Apply on LinkedIn <span
+                                        class="material-icons-round"
+                                        style="font-size:1rem; vertical-align:middle;">open_in_new</span></a>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="intern-card-rich">
+                            <div class="ic-header">
+                                <div class="ic-logo"
+                                    style="background:#fff; color:#000; font-weight:bold; display:flex; align-items:center; justify-content:center;">
+                                    Z</div>
+                                <div class="ic-info">
+                                    <div class="ic-role">Product Design Intern</div>
+                                    <div class="ic-company">
+                                        Zomato
+                                        <span class="source-badge">Source: Internshala</span>
+                                    </div>
+                                </div>
+                                <button class="btn-icon-sm"><span
+                                        class="material-icons-round">bookmark_border</span></button>
+                            </div>
+
+                            <div class="ic-meta-row">
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">location_on</span> Gurgaon</div>
+                                <div class="ic-meta-item"><span class="material-icons-round"
+                                        style="font-size:1rem">schedule</span> 3 Months</div>
+                            </div>
+
+                            <div class="ic-tags">
+                                <span class="tag-badge">Domain: Design</span>
+                                <span class="tag-badge">Paid</span>
+                                <span class="tag-badge stipend">₹45,000 / month</span>
+                            </div>
+
+                            <div class="ic-footer">
+                                <div class="deadline-timer" style="color:#64748b;">
+                                    <span class="material-icons-round" style="font-size:1rem">history</span> Posted 2h
+                                    ago
+                                </div>
+                                <a href="https://internshala.com" target="_blank" class="btn-primary-sm"
+                                    style="padding: 0.5rem 1.5rem; text-decoration:none;">Apply on Internshala <span
+                                        class="material-icons-round"
+                                        style="font-size:1rem; vertical-align:middle;">open_in_new</span></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- 3. Featured Panel -->
+                    <aside class="featured-panel">
+                        <div class="featured-card">
+                            <div style="display:flex; justify-content:space-between; margin-bottom:0.5rem;">
+                                <span class="badge" style="background:#dbeafe; color:#2563eb;">Featured</span>
+                            </div>
+                            <h4>HackWithInfy 2026</h4>
+                            <p class="text-secondary" style="font-size:0.8rem; margin-bottom:1rem;">Infosys nationwide
+                                coding contest.</p>
+                            <button class="btn-text-sm">View Details</button>
+                        </div>
+
+                        <div class="trending-list">
+                            <h3>Trending Now</h3>
+
+                            <div class="trending-item">
+                                <span class="trend-rank">1</span>
+                                <div>
+                                    <div style="font-weight:600; font-size:0.9rem;">SDE @ Amazon</div>
+                                    <div style="font-size:0.75rem; color:#64748b;">450+ Applicants</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <span class="trend-rank">2</span>
+                                <div>
+                                    <div style="font-weight:600; font-size:0.9rem;">Analyst @ Deloitte</div>
+                                    <div style="font-size:0.75rem; color:#64748b;">320+ Applicants</div>
+                                </div>
+                            </div>
+
+                            <div class="trending-item">
+                                <span class="trend-rank">3</span>
+                                <div>
+                                    <div style="font-weight:600; font-size:0.9rem;">Growth @ Cred</div>
+                                    <div style="font-size:0.75rem; color:#64748b;">210+ Applicants</div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- 4. Placements -->
+            <!-- 4. Placements -->
+            <section id="section-placements" class="dash-section">
+                <div class="section-header-rich">
+                    <div>
+                        <h2>Placement Opportunities – Department Only</h2>
+                        <p class="text-secondary">Official Campus Recruitment Portal</p>
+                    </div>
+                </div>
+
+                <!-- Official Banner -->
+                <div class="official-banner">
+                    <span class="material-icons-round" style="color:#4f46e5">verified_user</span>
+                    <span>Only faculty-approved placement drives are shown here.</span>
+                </div>
+
+                <!-- Summary Cards -->
+                <div class="stats-grid-v2" style="margin-bottom: 2rem;">
+                    <!-- Card 1 -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#e0e7ff; color:#4f46e5;">
+                                <span class="material-icons-round">event_note</span>
+                            </div>
+                            <span class="stat-value-rich">3</span>
+                        </div>
+                        <div class="stat-label-rich">Upcoming Drives</div>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#dcfce7; color:#166534;">
+                                <span class="material-icons-round">verified_user</span>
+                            </div>
+                            <span class="stat-value-rich">5</span>
+                        </div>
+                        <div class="stat-label-rich">Eligible Drives</div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="stat-card-rich">
+                        <div class="stat-header-rich">
+                            <div class="stat-icon-rich" style="background:#f3e8ff; color:#7e22ce;">
+                                <span class="material-icons-round">send</span>
+                            </div>
+                            <span class="stat-value-rich">12</span>
+                        </div>
+                        <div class="stat-label-rich">Applied Drives</div>
+                    </div>
+                </div>
+
+                <!-- Placement Readiness -->
+                <div class="readiness-card">
+                    <div class="readiness-info">
+                        <h3>Placement Readiness: 85%</h3>
+                        <p>You're doing great! Complete pending tasks to unlock all drives.</p>
+                    </div>
+                    <div class="readiness-steps">
+                        <div class="r-step done">
+                            <span class="material-icons-round" style="font-size:1.1rem">check_circle</span> Resume
+                            Verified
+                        </div>
+                        <div class="r-step done">
+                            <span class="material-icons-round" style="font-size:1.1rem">check_circle</span> Skill
+                            Assessment
+                        </div>
+                        <div class="r-step pending">
+                            <span class="material-icons-round" style="font-size:1.1rem">warning</span> Soft Skills Task
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Placement Listings -->
+                <div class="drives-list">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <h3 class="subsection-title" style="margin:0;">Active Drives</h3>
+                        <button class="btn-text-sm">View Archive</button>
+                    </div>
+
+                    <!-- Drive 1: Eligible -->
+                    <div class="placement-card">
+                        <div class="pc-header">
+                            <div class="pc-company-info">
+                                <div class="pc-logo">S</div>
+                                <div class="pc-role">
+                                    <h4>Software Development Engineer</h4>
+                                    <div class="pc-company-name">Salesforce</div>
+                                </div>
+                            </div>
+                            <span class="tag-badge">Full-Time + PPO</span>
+                        </div>
+
+                        <div class="pc-details-grid">
+                            <div class="pc-detail-item">
+                                <span class="pc-label">CTC / Package</span>
+                                <span class="pc-value">₹24 - 45 LPA</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Role</span>
+                                <span class="pc-value">SDE Back-end</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Location</span>
+                                <span class="pc-value">Bangalore / Hyderabad</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Eligibility</span>
+                                <span class="pc-value">CGPA > 8.0, CSE/IT</span>
+                            </div>
+                        </div>
+
+                        <div class="pc-footer">
+                            <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                                <div class="deadline-timer">
+                                    <span class="material-icons-round" style="font-size:1rem">event</span> Drive Date:
+                                    Jan 15th
+                                </div>
+                                <span class="eligibility-feedback success">Meets 5/5 Eligibility Criteria</span>
+                            </div>
+                            <div class="tpo-action-row">
+                                <button class="btn-outline-sm">View Details</button>
+                                <a href="https://salesforce.com/careers" target="_blank" class="btn-primary-sm"
+                                    style="text-decoration:none;">Apply on Salesforce <span class="material-icons-round"
+                                        style="font-size:1rem; vertical-align:middle;">open_in_new</span></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drive 2: Applied -->
+                    <div class="placement-card">
+                        <div class="pc-header">
+                            <div class="pc-company-info">
+                                <div class="pc-logo google-logo">G</div>
+                                <div class="pc-role">
+                                    <h4>Analyst - Trust & Safety</h4>
+                                    <div class="pc-company-name">Google</div>
+                                </div>
+                            </div>
+                            <span class="tag-badge">Full-Time</span>
+                        </div>
+
+                        <div class="pc-details-grid">
+                            <div class="pc-detail-item">
+                                <span class="pc-label">CTC / Package</span>
+                                <span class="pc-value">₹18 LPA</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Role</span>
+                                <span class="pc-value">Analyst</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Location</span>
+                                <span class="pc-value">Gurgaon</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Eligibility</span>
+                                <span class="pc-value">All Branches</span>
+                            </div>
+                        </div>
+
+                        <div class="pc-footer">
+                            <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                                <div class="deadline-timer">
+                                    <span class="material-icons-round" style="font-size:1rem">event</span> Applied on
+                                    Jan 3rd
+                                </div>
+                                <span class="eligibility-feedback warning">Application Submitted via TPO</span>
+                            </div>
+                            <div class="tpo-action-row">
+                                <button class="btn-outline-sm">View Details</button>
+                                <button class="btn-primary-sm" disabled
+                                    style="opacity:0.7; cursor:not-allowed;">Applied</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Drive 3: Not Eligible -->
+                    <div class="placement-card" style="opacity:0.8; background:#f8fafc;">
+                        <div class="pc-header">
+                            <div class="pc-company-info">
+                                <div class="pc-logo">D</div>
+                                <div class="pc-role">
+                                    <h4>Core Engineering Trainee</h4>
+                                    <div class="pc-company-name">Deloitte</div>
+                                </div>
+                            </div>
+                            <span class="tag-badge">Internship + PPO</span>
+                        </div>
+
+                        <div class="pc-details-grid">
+                            <div class="pc-detail-item">
+                                <span class="pc-label">CTC / Package</span>
+                                <span class="pc-value">₹12 LPA</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Role</span>
+                                <span class="pc-value">Core Eng.</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Location</span>
+                                <span class="pc-value">Pune</span>
+                            </div>
+                            <div class="pc-detail-item">
+                                <span class="pc-label">Eligibility</span>
+                                <span class="pc-value" style="color:#ef4444;">ECE/EEE Only</span>
+                            </div>
+                        </div>
+
+                        <div class="pc-footer">
+                            <div style="display:flex; flex-direction:column; gap:0.25rem;">
+                                <div class="deadline-timer">
+                                    <span class="material-icons-round" style="font-size:1rem">event</span> Deadline: Jan
+                                    10th
+                                </div>
+                                <span class="eligibility-feedback error">Improve skills (C++) to become eligible</span>
+                            </div>
+                            <div class="tpo-action-row">
+                                <button class="btn-outline-sm">View Details</button>
+                                <button class="btn-primary-sm" disabled style="opacity:0.5; cursor:not-allowed;">Not
+                                    Eligible</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 5. Tracker -->
+            <section id="section-tracker" class="dash-section">
+                <h2>Application Tracker</h2>
+                <div class="admin-section" style="margin-top:1rem;">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Role</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="company-cell">
+                                    <div class="company-logo-sm amazon-logo">A</div> Amazon
+                                </td>
+                                <td>SDE Intern</td>
+                                <td>Dec 20</td>
+                                <td><span class="status-pill rejected">Rejected</span></td>
+                            </tr>
+                            <tr>
+                                <td class="company-cell">
+                                    <div class="company-logo-sm" style="background:#2874f0;">F</div> Flipkart
+                                </td>
+                                <td>Product Intern</td>
+                                <td>Dec 28</td>
+                                <td><span class="status-pill applied">Applied</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- 6. AI Insights -->
+            <section id="section-ai" class="dash-section">
+                <h2>AI Career Insights</h2>
+                <div class="ai-banner" style="margin-top:1rem;">
+                    <div class="ai-content">
+                        <h3>Detailed Analysis</h3>
+                        <p>Based on your recent applications, we noticed you have strong Python skills but could improve
+                            in System Design concepts.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 7. Notifications -->
+            <section id="section-notifications" class="dash-section">
+                <h2>Notifications</h2>
+                <div class="section-container" style="margin-top:1rem;">
+                    <div class="deadline-item urgent">
+                        <span class="material-icons-round">warning</span>
+                        <div>
+                            <h5>Goldman Sachs Application Closing</h5>
+                            <p>Apply by Tomorrow, 5:00 PM</p>
+                        </div>
+                    </div>
+                    <div class="deadline-item">
+                        <span class="material-icons-round">info</span>
+                        <div>
+                            <h5>New Mock Test Available</h5>
+                            <p>Check "AI Insights" for details</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 8. Help -->
+            <section id="section-help" class="dash-section">
+                <h2>Help & Support</h2>
+                <div class="section-container" style="margin-top:1rem; text-align:center; padding: 3rem;">
+                    <img src="assets/help_faq.png" style="width:200px; margin-bottom:1rem;">
+                    <h3>Need Assistance?</h3>
+                    <p>Check out our FAQ or contact support.</p>
+                    <a href="help.html" class="btn-primary" style="margin-top:1rem; display:inline-block;">Visit Help
+                        Center</a>
+                </div>
+            </section>
+
+            <!-- 9. Settings -->
+            <section id="section-settings" class="dash-section">
+                <h2>Settings</h2>
+                <div class="form-card" style="margin-top:1rem;">
+                    <h3>Account Security</h3>
+                    <div class="input-group">
+                        <label>Current Password</label>
+                        <input type="password" placeholder="********">
+                    </div>
+                    <div class="input-group">
+                        <label>New Password</label>
+                        <input type="password" placeholder="********">
+                    </div>
+                    <button class="btn-primary">Update Password</button>
+
+                    <hr style="margin: 2rem 0; border:0; border-top:1px solid #eee;">
+
+                    <button class="menu-item logout" onclick="logout()"
+                        style="color:#ea4335; background:none; border:none; font-weight:600; cursor:pointer;">
+                        Delete Account
+                    </button>
+                </div>
+            </section>
+
+            <!-- 10. Goals & To-Do (New) -->
+            <section id="section-goals" class="dash-section">
+                <div class="section-header-rich">
+                    <div>
+                        <h2>My Goals & To-Do</h2>
+                        <p class="text-secondary">Track your preparation progress and daily tasks.</p>
+                    </div>
+                    <button class="btn-primary-sm">
+                        <span class="material-icons-round" style="font-size:1.1rem; vertical-align:middle;">add</span>
+                        New Goal
+                    </button>
+                </div>
+
+                <div class="goals-layout">
+                    <!-- Goals Column -->
+                    <div class="goals-column">
+                        <h3 class="subsection-title">This Month's Focus</h3>
+
+                        <!-- Goal Card 1 -->
+                        <div class="goal-card">
+                            <div class="goal-header">
+                                <div class="goal-icon orange">
+                                    <span class="material-icons-round">code</span>
+                                </div>
+                                <div class="goal-info">
+                                    <h4>Master Data Structures</h4>
+                                    <p>Solve 50 LeetCode problems</p>
+                                </div>
+                                <span class="goal-deadline">15 Days Left</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-label-row">
+                                    <span>25/50 Solved</span>
+                                    <span>50%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill" style="width: 50%; background: #ea580c;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Goal Card 2 -->
+                        <div class="goal-card">
+                            <div class="goal-header">
+                                <div class="goal-icon blue">
+                                    <span class="material-icons-round">record_voice_over</span>
+                                </div>
+                                <div class="goal-info">
+                                    <h4>Mock Interviews</h4>
+                                    <p>Complete 3 mock HR rounds</p>
+                                </div>
+                                <span class="goal-deadline">5 Days Left</span>
+                            </div>
+                            <div class="progress-container">
+                                <div class="progress-label-row">
+                                    <span>1/3 Completed</span>
+                                    <span>33%</span>
+                                </div>
+                                <div class="progress-bar-bg">
+                                    <div class="progress-bar-fill" style="width: 33%; background: #2563eb;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Weekly Calendar Mini-View (Static Demo) -->
+                        <div class="learning-streak">
+                            <div class="streak-header">
+                                <span><span class="material-icons-round fire-icon">local_fire_department</span> 12 Day
+                                    Streak</span>
+                                <span class="text-secondary">Keep it up!</span>
+                            </div>
+                            <div class="week-circles">
+                                <div class="day-circle done">M</div>
+                                <div class="day-circle done">T</div>
+                                <div class="day-circle done">W</div>
+                                <div class="day-circle done">T</div>
+                                <div class="day-circle active">F</div>
+                                <div class="day-circle">S</div>
+                                <div class="day-circle">S</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- To-Do Column -->
+                    <div class="todo-column">
+                        <h3 class="subsection-title">Daily Tasks</h3>
+                        <div class="todo-container">
+                            <!-- Add Task Input -->
+                            <div class="add-task-box">
+                                <input type="text" placeholder="Add a new task..." id="new-task-input">
+                                <button class="btn-icon-sm"><span class="material-icons-round">add</span></button>
+                            </div>
+
+                            <!-- Task List -->
+                            <div class="task-list">
+                                <div class="task-item">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="task-text">Update resume PDF</span>
+                                    <span class="priority-pill high">High</span>
+                                </div>
+
+                                <div class="task-item">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox" checked>
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="task-text completed-text">Register for Amazon Drive</span>
+                                    <span class="priority-pill high">High</span>
+                                </div>
+
+                                <div class="task-item">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="task-text">Watch OS lecture</span>
+                                    <span class="priority-pill medium">Med</span>
+                                </div>
+
+                                <div class="task-item">
+                                    <label class="custom-checkbox">
+                                        <input type="checkbox">
+                                        <span class="checkmark"></span>
+                                    </label>
+                                    <span class="task-text">Email Placement Cell</span>
+                                    <span class="priority-pill low">Low</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 11. Resume Templates (New) -->
+            <section id="section-resume" class="dash-section">
+                <h2>Resume Templates</h2>
+                <div class="section-container" style="margin-top:2rem;">
+                    <div class="stats-grid-v2" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                        <!-- Template 1 -->
+                        <div class="stat-card-rich" style="text-align:center;">
+                            <div style="height:200px; background:#f0f2f5; margin-bottom:1rem; border-radius:8px;"></div>
+                            <h4>Modern Tech</h4>
+                            <button class="btn-primary-sm" style="width:100%; margin-top:0.5rem;">Use Template</button>
+                        </div>
+                        <!-- Template 2 -->
+                        <div class="stat-card-rich" style="text-align:center;">
+                            <div style="height:200px; background:#f0f2f5; margin-bottom:1rem; border-radius:8px;"></div>
+                            <h4>Professional Classic</h4>
+                            <button class="btn-primary-sm" style="width:100%; margin-top:0.5rem;">Use Template</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
